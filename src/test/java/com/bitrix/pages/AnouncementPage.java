@@ -6,6 +6,8 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
+import javax.swing.*;
+
 public class AnouncementPage {
 
     public AnouncementPage(){ PageFactory.initElements(Driver.getDriver(), this); }
@@ -19,11 +21,17 @@ public class AnouncementPage {
     @FindBy (xpath = "(//span[@title='Upload files'])[1]")
     public WebElement uploadIcon;
 
-    @FindBy (linkText = "(//span[.='Upload files and images'])[1]")
+    @FindBy (xpath = "(//span[@title='Upload files'])[1]")
     public WebElement uploadFilesAndImages;
 
-    @FindBy (linkText = "(//span[.='Select document from Bitrix24'])[1]")
+    @FindBy (xpath = "(//span[.='Select document from Bitrix24'])[1]")
     public WebElement selectDocumentsFromBitrix24;
+
+    @FindBy (xpath = "(//a[@class='bx-file-dialog-content-link bx-file-dialog-icon bx-file-dialog-icon-file'])[6]")
+    public WebElement fileToUpload;
+
+    @FindBy (css = "span.popup-window-button.popup-window-button-accept")
+    public WebElement selectDocumentButton;
 
     // Gives a BUG
     @FindBy (linkText = "(//span[.='Office 365'])[1]")
@@ -35,7 +43,7 @@ public class AnouncementPage {
 
 
     //2nd AC
-    @FindBy (linkText = "//a[text()='Add more']")
+    @FindBy (xpath = "//a[@id='bx-destination-tag']")
     public WebElement addMore;
 
     @FindBy (xpath = "//div[@class='bx-finder-box-tabs']/a[1]")
@@ -44,8 +52,17 @@ public class AnouncementPage {
     @FindBy (xpath = "//div[@class='bx-finder-box-tabs']/a[2]")
     public WebElement EmployeesAndDepartments;
 
-    @FindBy (xpath = "//a[@class='bx-finder-box-tab bx-lm-tab-email bx-finder-box-tab-selected']")
+    @FindBy (xpath = "//a[.='E-mail users']")
     public WebElement eMailUsers;
+
+    @FindBy (xpath = "(//div[@class='bx-finder-box-item-t7-name'])[5]")
+    public WebElement email;
+
+    @FindBy (xpath = "//span[@class='popup-window-close-icon']")
+    public WebElement closeButton;
+
+    @FindBy (xpath = "(//span[.='email email'])[1]")
+    public WebElement emailAfterClick;
 
 
     //3nd AC
@@ -55,7 +72,7 @@ public class AnouncementPage {
     @FindBy (xpath = "//input[@id='linkidPostFormLHE_blogPostForm-text']")
     public WebElement linkText;
 
-    @FindBy (xpath = "linkidPostFormLHE_blogPostForm-href")
+    @FindBy (id = "linkidPostFormLHE_blogPostForm-href")
     public  WebElement linkURL;
 
     @FindBy (xpath = "//input[@value='Save']")
@@ -63,15 +80,42 @@ public class AnouncementPage {
 
     //4th AC BUG here
 
-    @FindBy (xpath = "//span[@title='Insert video']")
-    public WebElement videoIcon;
+//    @FindBy (xpath = "//span[@title='Insert video']")
+//    public WebElement videoIcon;
+//
+//    @FindBy (xpath = "//input[@placeholder='YouTube or Vimeo video URL']")
+//    public WebElement videoURL;
+//
+////    @FindBy (xpath = "//input[@class='adm-btn-save']")
+////    public WebElement saveVideo;
 
-    @FindBy (xpath = "//input[@placeholder='YouTube or Vimeo video URL']")
-    public WebElement videoURL;
+    //5th AC
 
-    @FindBy (xpath = "//input[@class='adm-btn-save']")
-    public WebElement saveVideo;
+    @FindBy (xpath = "//span[@title='Quote text']")
+    public WebElement comaIcon;
 
+    //6th AC
+    @FindBy (xpath = "(//span[@title='Add mention'])[1]")
+    public WebElement addMention;
+
+    @FindBy (xpath = "(//div[@class='bx-finder-box-item-t7-name'])[1]")
+    public  WebElement mentionEmail;
+
+    //7th AC
+
+    @FindBy (xpath = "(//span[@class='feed-add-post-form-editor-btn'])[1]")
+    public WebElement visualEditor;
+
+    //8th AC
+    @FindBy (xpath = "//span[@title='Topic']")
+    public WebElement topic;
+
+    //9th
+    //BUG
+
+    //10th
+    @FindBy (xpath = "//span[@title='Add tag']")
+    public  WebElement tag;
 
 
 

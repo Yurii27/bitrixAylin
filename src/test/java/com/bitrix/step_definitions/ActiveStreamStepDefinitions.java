@@ -108,6 +108,7 @@ public class ActiveStreamStepDefinitions {
 
     @Then("user clicks employees and departments button")
     public void userClicksEmployeesAndDepartmentsButton() {
+
         activeStreamPage.employeesAndDepartmentsElement.click();
     }
 
@@ -162,6 +163,7 @@ public class ActiveStreamStepDefinitions {
     @Then("user clicks on the mentioned icon")
     public void userClicksOnTheMentionedIcon() {
         activeStreamPage.mentionedbutton.click();
+
 
     }
 }
